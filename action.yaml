@@ -1,0 +1,12 @@
+name: "Github Tag Outout"
+description: "Get git tag on merge"
+author: "Andrei Belov"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+outputs:
+  tag:
+    description: "The latest tag after running this action"
+branding:
+  icon: "git-merge"
+  color: "orange"

@@ -5,8 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     name: tag extractor
     steps:
-      - uses: actions/checkout@v3
-
       - name: Get git tag
         id: extractor
         uses: solte-go/git-tag-output-action@master

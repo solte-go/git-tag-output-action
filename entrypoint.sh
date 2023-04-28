@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# shellcheck disable=SC2039
 set -o pipefail
 
 setOutput() {

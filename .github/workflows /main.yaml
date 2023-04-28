@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: extractor
-        uses: solte-go/tag_to_output@main
+        uses: solte-go/git-tag-output-action@master
 
       # Use the output from the `hello` step
       - name: Get the output time

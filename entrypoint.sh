@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # shellcheck disable=SC2039
-set -o pipefail
+#set -o pipefail
 
 setOutput() {
     echo "${1}=${2}" >> "${GITHUB_OUTPUT}"

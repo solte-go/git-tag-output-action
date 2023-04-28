@@ -1,4 +1,4 @@
-name: "Github Tag Outout"
+name: "Github Tag Output"
 description: "Get git tag on merge"
 author: "Andrei Belov"
 runs:

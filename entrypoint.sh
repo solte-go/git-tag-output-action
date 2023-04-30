@@ -7,7 +7,17 @@ setOutput() {
     echo "${1}=${2}" >> "${GITHUB_OUTPUT}"
 }
 
-tagReg="^v?[0-9]+\.[0-9]+\.[0-9]+$"
-tag="$(git for-each-ref --sort=-v:refname --format '%(refname:lstrip=2)' | grep -E "$tagReg" | head -n 1)"
+regex='v?[0-9]+\.[0-9]+\.[0-9]+$'
+
+tag="$(git show -s --format=%B | grep "#tag")"
+echo "$tag"
+if [[ $tag =~ $regex ]];
+then
+  echo "${BASH_REMATCH[0]}"
+else
+  echo "doesn't match" # this could get noisy if there are a lot of non-matching files
+  tag='0.0.0'
+fi
+
 
 setOutput "tag" "$tag"

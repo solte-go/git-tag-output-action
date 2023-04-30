@@ -19,5 +19,4 @@ else
   tag='0.0.0'
 fi
 
-
 setOutput "tag" "$tag"

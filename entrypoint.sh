@@ -11,6 +11,7 @@ regex='v?[0-9]+\.[0-9]+\.[0-9]+$'
 
 tag="$(git show -s --format=%B | grep "#tag")"
 echo "$tag"
+git show -s --format=%B | grep "#tag"
 if [[ $tag =~ $regex ]];
 then
   echo "${BASH_REMATCH[0]}"

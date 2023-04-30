@@ -11,10 +11,10 @@ regex='v?[0-9]+\.[0-9]+\.[0-9]+$'
 
 tag="$(git show -s --format=%B | grep "#tag")"
 echo "$tag"
-git for-each-ref --sort=-v:refname
 if [[ $tag =~ $regex ]];
 then
   echo "${BASH_REMATCH[0]}"
+  tag="${BASH_REMATCH[0]}"
 else
   echo "doesn't match" # this could get noisy if there are a lot of non-matching files
   tag='0.0.0'
